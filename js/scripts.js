@@ -15,5 +15,4 @@ for (let card of cards) {
 
 document.querySelector(".modal__close").addEventListener("click", function(){
     modalOverlay.classList.remove("active")
-    //modalOverlay.querySelector("iframe").src = ""
 })
