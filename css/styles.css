@@ -2,7 +2,6 @@
 
 :root {
     --color-font: #111111;
-    --color-link-light: #6b6b6b;
 }
 
 * {
@@ -34,7 +33,7 @@ body {
 }
 
 .pages a:hover {
-    color: var(--color-link-light);
+    color: #6b6b6b;
     transition: color 200ms;
 }
 
