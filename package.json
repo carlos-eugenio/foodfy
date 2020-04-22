@@ -1,0 +1,19 @@
+{
+  "name": "foodfy",
+  "version": "1.0.0",
+  "description": "<b> This project is a recipe website, created during the rocketseat launchbase course. </b></br> Esse projeto é um site de receitas, criado durante o curso launchbase da rocketseat.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlos-eugenio/foodfy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlos-eugenio/foodfy/issues"
+  },
+  "homepage": "https://github.com/carlos-eugenio/foodfy#readme"
+}

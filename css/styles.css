@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --color-font: #111111;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background:white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.pages {
+    text-align: left;
+    max-width: 940px;
+    max-height: 26.9px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+.pages a {
+    font-size: 16px;
+    color: var(--color-font);
+    text-decoration: none;
+    margin-right: 30px;
+    vertical-align: 40%;
+}
+
+.pages a:hover {
+    color: #6b6b6b;
+    transition: color 200ms;
+}
+
+#logo-img {
+    margin-right: 122px;
+    vertical-align: 0;
+    text-decoration: none;    
+}
+
+.banner {
+    background-color: #FBDFDB;
+    width: 940px;
+    height: 366px;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    text-align: left;
+    position: relative;
+}
+
+#container-banner-text {
+    position: absolute;
+    margin-top: 117px;
+    margin-left: 60px;
+    max-width: 316px;
+}
+
+#container-banner-text h1 {
+    font-weight: 700;
+    font-size: 32px;
+}
+
+#container-banner-text h2 {
+    opacity: 0.7;
+    font-weight: 400;
+    font-size: 18px;
+    margin-top: 10px;
+    line-height: 28px;
+}
+
+#banner-img {
+    position: absolute;
+    width: 216px;
+    height: 300px;
+    right: 100px;
+    top: 66px;
+}
+
+#wrapper {
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+#wrapper p {
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--color-font);
+}
+
+.content {
+    width: 940px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;    
+}
+
+.card__image-container img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.card__title{
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--color-font);
+    margin-top: 20px;
+}
+
+.card__author{
+    font-weight: 400;
+    font-size: 14px;
+    color: #777777;
+    margin-top: 5px;
+}
+
+/*----- FOOTER -----*/
+.footer {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background: #eeeeee;
+    margin-top: 50px;
+    padding: 23px;
+}
+
+.footer p {
+    font-weight: 400;
+    font-size: 14px;
+    color: #999999;
+}
+
+/*----- ABOUT PAGE -----*/
+.content-about {
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.content-about h1 {
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--color-font);
+}
+
+.content-about h2 {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--color-font);
+    margin-top: 30px;
+}
+
+.content-about p {
+    font-weight: 400;
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+    margin-top: 20px;
+}
+
+/*----- MODAL -----*/
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+}
+
+.modal {
+    background-color: white;
+    width: 660px;
+    height: 413px;
+    margin: 29vh auto;
+    position: relative;
+    border-radius: 16px;    
+}
+
+.modal .close-modal {
+    color: black;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+}
+
+.modal__image-container img {
+    width: 600px;
+    height: 200px;
+    border-radius: 15px;
+    top: 30px;
+    left: 30px;
+    position: absolute;       
+}
+
+.modal__title {
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-font);
+    text-align: center;
+    position: absolute;
+    top: 260px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)        
+}
+
+.modal__author {
+    font-weight: 400;
+    font-size: 18px;
+    color: #777777;
+    text-align: center;
+    position: absolute;     
+    top: 293px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)     
+}
+
+.modal__close {
+    font-weight: 400;
+    font-size: 16px;
+    color: #999999;
+    text-align: center;
+    position: absolute;     
+    top: 364px;
+    left: 281px;
+    cursor: pointer;           
+}
+
+/*----- MODAL-ACTIVE -----*/
+.modal-overlay.active {
+   opacity: 1;
+   visibility: visible;
+}
+
+
+
