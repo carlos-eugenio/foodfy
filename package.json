@@ -1,11 +1,18 @@
 {
   "name": "foodfy",
   "version": "1.0.0",
-  "description": "<b> This project is a recipe website, created during the rocketseat launchbase course. </b></br> Esse projeto é um site de receitas, criado durante o curso launchbase da rocketseat.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "description": "<b> This project is a recipe website, created during the rocketseat launchbase course. </b></br> Esse projeto é um site de receitas, criado durante o curso launchbase da rocketseat.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/carlos-eugenio/foodfy.git"
