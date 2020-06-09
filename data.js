@@ -1,6 +1,6 @@
 module.exports = [
     {
-      id="triplo-bacon-burger",
+      id: "triplo-bacon-burger",
       image: 'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png',
       title: 'Triplo bacon burger',
       author: 'Jorge Relato',
@@ -24,7 +24,7 @@ module.exports = [
       information: "Preaqueça a chapa, frigideira ou grelha por 10 minutos antes de levar os hambúrgueres. Adicione um pouquinho de óleo ou manteiga e não amasse os hambúrgueres! \n\n Você sabia que a receita que precede o hambúrguer surgiu no século XIII, na Europa? A ideia de moer a carne chegou em Hamburgo no século XVII, onde um açogueiro resolveu também temperá-la. Assim, a receita foi disseminada nos Estados Unidos por alemães da região. Lá surgiu a ideia de colocar o hambúrguer no meio do pão e adicionar outros ingredientes, como queijom tomates e alface."
     },
     {
-      id="pizza-4-estacoes",
+      id: "pizza-4-estacoes",
       image: 'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/pizza.png',
       title: 'Pizza 4 estações',
       author: 'Fabiana Melo',
@@ -49,10 +49,10 @@ module.exports = [
         'Cubra a massa com mussarela ralada, tomate e orégano a gosto.',
         'Leve novamente ao forno até derreter a mussarela.'
       ],
-      information: 'Pizza de liquidificador é uma receita deliciosa e supersimples de preparar. Feita toda no liquidificador, ela é bem prática para o dia a dia. Aqui no TudoGostoso você também encontra diversas delícias práticas feitas no liquidificador: massa de panqueca, torta de frango de liquidificador, pão de queijo de liquidificador, bolo de banana, bolo de chocolate e muito mais!'
+      information: 'Pizza de liquidificador é uma receita deliciosa e super simples de preparar. Feita toda no liquidificador, ela é bem prática para o dia a dia. Aqui no TudoGostoso você também encontra diversas delícias práticas feitas no liquidificador: massa de panqueca, torta de frango de liquidificador, pão de queijo de liquidificador, bolo de banana, bolo de chocolate e muito mais!'
     },
     {
-      id="assinhas-de-frango-ao-barbecue",
+      id: "assinhas-de-frango-ao-barbecue",
       image: 'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/asinha.png',
       title: 'Asinhas de frango ao barbecue',
       author: 'Vania Steroski',
@@ -70,7 +70,7 @@ module.exports = [
       information: ''
     },
     {
-      id="lasanha-mac-n-cheese",
+      id: "lasanha-mac-n-cheese",
       image: 'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/lasanha.png',
       title: "Lasanha mac n' cheese",
       author: 'Juliano Vieira',
@@ -91,7 +91,7 @@ module.exports = [
       information: 'Recheie a lasanha com o que preferir.'
     },
     {
-      id="espaguete-ao-alho",
+      id: "espaguete-ao-alho",
       image: 'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/macarrao.png',
       title: 'Espaguete ao alho',
       author: 'Júlia Kinoto',
@@ -116,7 +116,7 @@ module.exports = [
       information: 'Não lave o macarrão nem passe óleo ou gordura nele depois de escorrê-lo. Coloque direto na frigideira.'
     },
     {
-      id="docinhos-pao-do-ceu",
+      id: "docinhos-pao-do-ceu",
       image: 'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/doce.png',
       title: 'Docinhos pão-do-céu',
       author: 'Ricardo Golvea',

@@ -96,7 +96,7 @@ body {
     color: var(--color-font);
 }
 
-.content {
+.cards {
     width: 940px;
     text-align: left;
     margin-left: auto;
