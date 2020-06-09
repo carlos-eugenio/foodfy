@@ -27,6 +27,12 @@ server.get("/receitas", function(req, res) {
     return res.render("recipes", { items: data })
 });
 
+server.get("/receitas/:id", function(req, res) {
+    const id = req.params.id
+    const info_recipe = data.find( id_recipe => id_recipe.id === `${id}` )
+    return res.render("recipe-details", { items: info_recipe })
+});
+
 server.use(function(req, res) {
     res.status(404).render("not-found")
 })
