@@ -7,156 +7,20 @@
 {% block content %}
 
     <section class="cards" style="margin-top: 50px;">
-        <div class="card">
+        {% for item in items %}
+        <div class="card" id="{{item.id}}">
             <div class="card__image-container">
-                <img src="/burger.png" alt="hamburger" id="card__image-link">
+                <img src="{{item.image}}" alt="{{item.title}}" id="card__image-link">
             </div>
             <div class="card__title">
-                <p id="card__title">Triplo burguer bacon</p>
+                <p id="card__title">{{item.title}}</p>
             </div>
             <div class="card__author">
-                <p id="card__author">por Jorge Relato</p>
+                <p id="card__author">por {{item.title}}</p>
             </div>
         </div>
-        <div class="card">
-            <div class="card__image-container">
-                <img src="/pizza.png" alt="pizza" id="card__image-link">
-            </div>
-            <div class="card__title">
-                <p id="card__title">Pizza 4 estações</p>
-            </div>
-            <div class="card__author">
-                <p id="card__author">por Fabiana Melo</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card__image-container">
-                <img src="/espaguete.png" alt="espaguete" id="card__image-link">
-            </div>
-            <div class="card__title">
-                <p id="card__title">Espaguete ao alho</p>
-            </div>
-            <div class="card__author">
-                <p id="card__author">por Júlia Kinoto</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card__image-container">
-                <img src="/lasanha.png" alt="lasanha" id="card__image-link">
-            </div>
-            <div class="card__title">
-                <p id="card__title">Lasanha Mac n' cheese</p>
-            </div>
-            <div class="card__author">
-                <p id="card__author">por Juliano Vieira</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card__image-container">
-                <img src="/doce.png" alt="docinhos" id="card__image-link">
-            </div>
-            <div class="card__title">
-                <p id="card__title">Docinhos pão-do-céu</p>
-            </div>
-            <div class="card__author">
-                <p id="card__author">por Ricardo Golvea</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card__image-container">
-                <img src="/asinhas.png" alt="asinhas" id="card__image-link">
-            </div>
-            <div class="card__title">
-                <p id="card__title">Asinhas de frango ao barbecue</p>
-            </div>
-            <div class="card__author">
-                <p id="card__author">por Vania Steroski</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card__image-container">
-                <img src="/burger.png" alt="hamburger" id="card__image-link">
-            </div>
-            <div class="card__title">
-                <p id="card__title">Triplo burguer bacon</p>
-            </div>
-            <div class="card__author">
-                <p id="card__author">por Jorge Relato</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card__image-container">
-                <img src="/pizza.png" alt="pizza" id="card__image-link">
-            </div>
-            <div class="card__title">
-                <p id="card__title">Pizza 4 estações</p>
-            </div>
-            <div class="card__author">
-                <p id="card__author">por Fabiana Melo</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card__image-container">
-                <img src="/espaguete.png" alt="espaguete" id="card__image-link">
-            </div>
-            <div class="card__title">
-                <p id="card__title">Espaguete ao alho</p>
-            </div>
-            <div class="card__author">
-                <p id="card__author">por Júlia Kinoto</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card__image-container">
-                <img src="/lasanha.png" alt="lasanha" id="card__image-link">
-            </div>
-            <div class="card__title">
-                <p id="card__title">Lasanha Mac n' cheese</p>
-            </div>
-            <div class="card__author">
-                <p id="card__author">por Juliano Vieira</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card__image-container">
-                <img src="/doce.png" alt="docinhos" id="card__image-link">
-            </div>
-            <div class="card__title">
-                <p id="card__title">Docinhos pão-do-céu</p>
-            </div>
-            <div class="card__author">
-                <p id="card__author">por Ricardo Golvea</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card__image-container">
-                <img src="/asinhas.png" alt="asinhas" id="card__image-link">
-            </div>
-            <div class="card__title">
-                <p id="card__title">Asinhas de frango ao barbecue</p>
-            </div>
-            <div class="card__author">
-                <p id="card__author">por Vania Steroski</p>
-            </div>
-        </div>
+        {% endfor %} 
     </section>
-    
-    <div class="modal-overlay">
-        <div class="modal">
-            <div class="modal__image-container">
-                <img src="" id="modal__image-link">
-            </div>
-            <div class="modal__title">
-                <p id="modal__title"></p>
-            </div>
-            <div class="modal__author">
-                <p id="modal__author"></p>
-            </div>              
-            <a class="modal__close">
-                <p>Fechar modal</p>
-            </a>
-        </div>
-    </div>
 
     <script src="/scripts.js"></script>
 

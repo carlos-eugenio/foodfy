@@ -24,7 +24,7 @@ server.get("/sobre", function(req, res) {
 })
 
 server.get("/receitas", function(req, res) {
-    return res.render("recipes")
+    return res.render("recipes", { items: data })
 });
 
 server.use(function(req, res) {
