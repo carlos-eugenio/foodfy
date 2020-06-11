@@ -1,25 +1,43 @@
 {% extends "layout.njk" %}
 
 {% block head %}
-    <title>Receita de {{item.title}}</title>
+    <title>Receita de {{items.title}}</title>
 {% endblock %}
 
 {% block content %}
 
-    <section class="cards" style="margin-top: 50px;">
-        {% for item in items %}
-        <div class="card" id="{{item.id}}">
-            <div class="card__image-container">
-                <img src="{{item.image}}" alt="{{item.title}}" id="card__image-link">
+    <div class="content-recipe-details">
+        <img src="{{items.image}}" alt="{{items.title}}">
+        <h1>{{items.title}}</h1>
+        <h2>por {{items.author}}</h2>
+        <section class="recipe-description-container">
+            <div class="recipe-description" id="recipe-ingredients">
+                <p>Ingredientes <a>ESCONDER</a></p>
+                <article>
+                    <ul>
+                    {% for ingredient in items.ingredients %}
+                        <li>{{ingredient}}</li>
+                    {% endfor %} 
+                    </ul>
+                </article>
             </div>
-            <div class="card__title">
-                <p id="card__title">{{item.title}}</p>
+            <div class="recipe-description" id="recipe-preparation">
+                <p>Modo de preparo <a>ESCONDER</a></p>                 
+                <article>
+                    <ul>
+                    {% for prepare in items.preparation %}
+                        <li>{{prepare}}</li>
+                    {% endfor %} 
+                    </ul>
+                </article>
             </div>
-            <div class="card__author">
-                <p id="card__author">por {{item.title}}</p>
+            <div class="recipe-description" id="recipe-information">
+                <p>Informações adicionais <a>ESCONDER</a></p> 
+                <article>{{items.information}}</article>
             </div>
-        </div>
-        {% endfor %} 
-    </section>
+        </section>
+    </div>
+
+    <script src="/scripts.js"></script>
 
 {% endblock %}
