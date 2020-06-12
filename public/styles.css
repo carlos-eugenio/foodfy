@@ -248,3 +248,32 @@ body {
 .recipe-description {
     margin-bottom: 39px;
 }
+
+/*---- NOT FOUND ----*/
+.not-found {
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 100px;
+    border-radius: 30px;
+    margin-top: 13%;
+    margin-bottom: 14%;
+    background-color: #FBDFDB;
+    position: relative;
+}
+
+.not-found h1 {
+    font-weight: 700;
+    font-size: 64px;
+    color: var(--font-black-light);
+    text-align: left;
+    margin-top: 0px;
+}
+
+.not-found img {
+    position: absolute;
+    width: 216px;
+    height: 300px;
+    right: 100px;
+    top: -25px;
+}
