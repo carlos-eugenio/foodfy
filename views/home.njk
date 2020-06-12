@@ -1,0 +1,46 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Foodfy</title>
+{% endblock %}
+
+{% block header %}
+
+    <div class="banner">
+        <div id="container-banner-text">
+            <h1>As melhores receitas</h1>
+            <h2>Aprenda a construir os melhores pratos 
+                com receitas criadas por profissionais 
+                do mundo inteiro.
+            </h2>
+        </div>
+        <img src="/chef.png" id="banner-img" alt="chef">
+    </div>
+    
+{% endblock %}    
+
+{% block content %}
+
+    <div id="wrapper">
+        <p>Mais acessadas</p>
+    </div>
+
+    <section class="cards">
+        {% for item in items %}
+        <div class="card" id="{{item.id}}">
+            <div class="card__image-container">
+                <img src="{{item.image}}" alt="{{item.title}}" id="card__image-link">
+            </div>
+            <div class="card__title">
+                <p id="card__title">{{item.title}}</p>
+            </div>
+            <div class="card__author">
+                <p id="card__author">por {{item.author}}</p>
+            </div>
+        </div>
+        {% endfor %}        
+    </section>
+
+    <script src="/scripts.js"></script>
+
+{% endblock %}
