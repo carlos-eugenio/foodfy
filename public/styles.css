@@ -228,11 +228,16 @@ body {
     color: var(--font-black-light);
     line-height: 28px;
     text-align: left;
+    display: none;
 }
 
 .content-recipe-details article ul {
     list-style-position: inside;
     text-align: left;
+}
+
+.content-recipe-details article.active {
+    display: inline;
 }
 
 .recipe-description-container {

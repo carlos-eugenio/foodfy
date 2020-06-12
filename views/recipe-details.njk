@@ -11,9 +11,9 @@
         <h1>{{items.title}}</h1>
         <h2>por {{items.author}}</h2>
         <section class="recipe-description-container">
-            <div class="recipe-description" id="recipe-ingredients">
+            <div class="recipe-description">
                 <p>Ingredientes <a>ESCONDER</a></p>
-                <article>
+                <article class="active">
                     <ul>
                     {% for ingredient in items.ingredients %}
                         <li>{{ingredient}}</li>
@@ -21,8 +21,8 @@
                     </ul>
                 </article>
             </div>
-            <div class="recipe-description" id="recipe-preparation">
-                <p>Modo de preparo <a>ESCONDER</a></p>                 
+            <div class="recipe-description">
+                <p>Modo de preparo <a>MOSTRAR</a></p>                 
                 <article>
                     <ul>
                     {% for prepare in items.preparation %}
@@ -31,8 +31,8 @@
                     </ul>
                 </article>
             </div>
-            <div class="recipe-description" id="recipe-information">
-                <p>Informações adicionais <a>ESCONDER</a></p> 
+            <div class="recipe-description">
+                <p>Informações adicionais <a>MOSTRAR</a></p> 
                 <article>{{items.information}}</article>
             </div>
         </section>
