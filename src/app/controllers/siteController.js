@@ -40,9 +40,11 @@ module.exports = {
         return res.render("about")
     },
     allRecipes(req, res){
-        return res.send("Site - recipes")
+        return res.render("recipes", { items: data })
     },
     recipeDetails(req, res){
-        return res.send("Site - recipe details")
+        const id = req.params.id
+        const info_recipe = data.find( id_recipe => id_recipe.id === `${id}` )
+        return res.render("recipe-details", { items: info_recipe })
     }
 }
