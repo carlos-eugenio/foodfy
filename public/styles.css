@@ -277,3 +277,105 @@ body {
     right: 100px;
     top: -25px;
 }
+
+/* ---- ADMIN PANEL ---- */
+.cards-adm {
+    width: 940px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 39px;
+    grid-row-gap: 20px;    
+}
+
+.card-adm {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+}
+
+.card-adm__image-container img {
+    height: 80px;
+    width: 172px;
+    object-fit: cover;
+    border-radius: 8.57px;
+}
+
+.card-adm__details{
+    text-align: left;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--font-black-dark);
+}
+
+.card__author{
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--font-gray-dark);
+}
+
+.card__link, 
+.card__link a{
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #6558C3;
+    text-decoration: none;
+}
+
+/* ---- EDIT, SHOW ---- */
+.page-menu {
+    text-align: left;
+    width: 940px;
+    height: 37px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.page-menu h1 {
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--font-black-dark);
+    line-height: 36px;
+}
+
+.form-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: right;
+}
+
+.page-menu a,
+.save-button{
+    justify-self: right;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFF;
+    background: #6558C3;
+    border-radius: 4px;
+    padding: 9px 20px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.delete-button{
+    justify-self: right;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFF;
+    background: #DC4747;
+    border-radius: 4px;
+    padding: 9px 20px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}

@@ -3,11 +3,6 @@ const routes = express.Router()
 const siteController = require('./app/controllers/siteController')
 const admController = require('./app/controllers/admController')
 
-// Home
-//routes.get("/", function(req, res) {
-//    return res.render("home", { items: data })
-//})
-
 // Site
 routes.get("/", siteController.home);
 routes.get("/sobre", siteController.about);

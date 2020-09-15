@@ -1,12 +1,31 @@
-{% extends "layout.njk" %}
+{% extends "../layout.njk" %}
 
 {% block head %}
-    <title>Receitas</title>
+    <title>Foodfy</title>
 {% endblock %}
+
+{% block header %}
+
+    <div class="banner">
+        <div id="container-banner-text">
+            <h1>As melhores receitas</h1>
+            <h2>Aprenda a construir os melhores pratos 
+                com receitas criadas por profissionais 
+                do mundo inteiro.
+            </h2>
+        </div>
+        <img src="/assets/chef.png" id="banner-img" alt="chef">
+    </div>
+    
+{% endblock %}    
 
 {% block content %}
 
-    <section class="cards" style="margin-top: 50px;">
+    <div id="wrapper">
+        <p>Mais acessadas</p>
+    </div>
+
+    <section class="cards">
         {% for item in items %}
         <div class="card" id="{{item.id}}">
             <div class="card__image-container">
@@ -19,7 +38,7 @@
                 <p id="card__author">por {{item.author}}</p>
             </div>
         </div>
-        {% endfor %} 
+        {% endfor %}        
     </section>
 
     <script src="/scripts.js"></script>

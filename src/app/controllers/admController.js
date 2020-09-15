@@ -1,8 +1,9 @@
 //const admModel = require('../models/admModel')
+const data = require("../../config/data")
 
 module.exports = {
     index(req, res){
-        return res.send("Adm - Index")
+        return res.render("./admin/home", { items: data })
         // let { filter, page, limit } = req.query
 
         // page = page || 1
@@ -63,20 +64,11 @@ module.exports = {
         // })    
     },
     show(req, res){
-        return res.send("Adm - Show")
-        // Instructor.find(req.params.id, function(instructor) {
-        //     if (!instructor) return res.send("Instructor not found!")
-
-        //     instructor.age = age(instructor.birth)
-        //     instructor.services = instructor.services.split(",")
-
-        //     instructor.created_at = date(instructor.created_at).format
-
-        //     return res.render("instructors/show", { instructor })
-        // })
+        const id = req.params.id
+        const info_recipe = data.find( id_recipe => id_recipe.id === `${id}` )
+        return res.render("./admin/show", { items: info_recipe })
     },
     edit(req, res){
-        return res.send("Adm - Edit")
         // Instructor.find(req.params.id, function(instructor) {
         //     if (!instructor) return res.send("Instructor not found!")
 
@@ -84,6 +76,9 @@ module.exports = {
 
         //     return res.render("instructors/edit", { instructor })
         // })
+        const id = req.params.id
+        const info_recipe = data.find( id_recipe => id_recipe.id === `${id}` )
+        return res.render("./admin/edit", { items: info_recipe })
     },
     put(req, res){
         return res.send("Adm - Put")

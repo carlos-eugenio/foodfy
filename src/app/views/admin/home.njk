@@ -1,0 +1,29 @@
+{% extends "../layout.njk" %}
+
+{% block head %}
+    <title>Receitas</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-menu">
+        <h1>Gerenciar receitas</h1>
+    </div>
+    <section class="cards-adm">
+        {% for item in items %}
+        <div class="card-adm" id="{{item.id}}">
+            <div class="card-adm__image-container">
+                <img src="{{item.image}}" alt="{{item.title}}" id="card__image-link">
+            </div>
+            <div class="card-adm__details">
+                <p id="card__title">{{item.title}}</p>
+                <p class="card__author">{{item.author}}</p>
+                <p class="card__link"><a href="/admin/recipes/{{item.id}}">Visualizar</a></p>
+            </div>
+        </div>
+        {% endfor %} 
+    </section>
+
+    <script src="/scripts.js"></script>
+
+{% endblock %}
