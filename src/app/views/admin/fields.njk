@@ -1,37 +1,30 @@
 <div class="item">
-    <div>Avatar URL</div>
-    <div><input type="url" name="avatar_url" placeholder="http://" value="{{ instructor.avatar_url }}"></div>
+    <div>Titulo da receita</div>
+    <div><input type="url" name="recipe_title" value="{{ recipe.title }}"></div>
 </div>
 <div class="item">
-    <div>Instrutor</div>
-    <div><input type="text" name="name" value="{{ instructor.name }}"></div>
+    <div>Imagem da receita</div>
+    <div><input type="text" name="recipe_image" placeholder="http://" value="{{ recipe.image }}"></div>
 </div>
 <div class="item">
-    <div>Data de nascimento</div>
-    <div><input type="date" name="birth" value="{{ instructor.birth }}"></div>
-</div>
-<div class="item">
-    <div>Sexo</div>
-    <div>
-        <span>
-            <input type="radio" name="gender" value="M" 
-            {% if instructor.gender == 'M' %}
-            checked
-            {% endif %}>
-            Masculino
-        </span>
-        <span>
-            <input type="radio" name="gender" value="F"
-            {% if instructor.gender == 'F' %}
-            checked
-            {% endif %}>
-            Feminino
-        </span>
+    <div>Ingredientes</div>
+    <div id="ingredients">
+        <div class="ingredient">
+            <input type="text" name="recipe_ingredients[]" value="" />
+        </div>
     </div>
+    <button type="button" class="add-ingredient">Adicionar ingrediente</button>
 </div>
 <div class="item">
-    <div>Área de atuação</div>
-    <div><input type="text" name="services" placeholder="Separe os serviços prestados por virgula." value="{{ instructor.services }}"></div>
+    <div>Modo de preparo</div>
+    <div id="directions">
+        <div class="direction">
+            <input type="text" name="recipe_directions[]" value="" />
+        </div>
+    </div>
+    <button type="button" class="add-direction">Adicionar modo de preparo</button>
 </div>
-
-<button type="submit">Salvar</button>
+<div class="item">
+    <div>Informações adicionais</div>
+    <div><textarea name="recipe_additional">{{ recipe.additional }}</textarea></div>
+</div>
