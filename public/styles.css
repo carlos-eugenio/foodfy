@@ -279,6 +279,45 @@ body {
 }
 
 /* ---- ADMIN PANEL ---- */
+
+.header-adm {
+    width: 100%;
+    height: 80px;
+    margin-top: 0px;
+    background-color: #000000;    
+}
+
+.pages-adm {
+    text-align: left;
+    max-width: 940px;
+    max-height: 26.9px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 27px;
+}
+
+.pages-adm a {
+    font-size: 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-right: 30px;
+    vertical-align: 40%;
+}
+
+.pages-adm a:hover {
+    color: #6b6b6b;
+    transition: color 200ms;
+}
+
+.avatar-adm {
+    color: #DC4747;
+    float: right;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+
+}
+
 .cards-adm {
     width: 940px;
     text-align: left;
@@ -328,6 +367,7 @@ body {
 }
 
 /* ---- EDIT, SHOW ---- */
+
 .page-menu {
     text-align: left;
     width: 940px;
@@ -389,6 +429,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
+    margin-bottom: 50px;
     /* margin-bottom: 20px; */
     font-weight: 700;
     font-size: 16px;
@@ -414,6 +455,7 @@ body {
 }
 
 .edit-details textarea {
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 400;
     width: 100%;

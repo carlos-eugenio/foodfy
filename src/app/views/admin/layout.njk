@@ -8,11 +8,12 @@
     </head> 
     <body>
 
-        <header>
-        <div class="pages">
-            <a href="/" id="logo-img"><img src="/assets/logo.png" alt="Foodfy-logo"></a>
+        <header class="header-adm">
+        <div class="pages-adm">
+            <a href="/" id="logo-img"><img src="/assets/logobw.png" alt="Foodfy-logo"></a>
             <a href="#">Sobre</a>
             <a href="/admin/recipes">Receitas</a>
+            <div class="avatar-adm">Área administrativa</div>
         </div>
 
         {% block header %}{% endblock %}
@@ -21,8 +22,5 @@
 
         {% block content %}{% endblock %}
 
-        <div class="footer">
-            <p>Todos direitos reservados, receitas Foodfy</p>
-        </div>
     </body>
 </html>

@@ -37,8 +37,7 @@ module.exports = {
     
     },
     create(req, res){
-        return res.send("Adm - Create")
-        // return res.render("instructors/create")
+        return res.render("./admin/create")
     },
     post(req, res){
         return res.send("Adm - post")
@@ -78,7 +77,7 @@ module.exports = {
         // })
         const id = req.params.id
         const info_recipe = data.find( id_recipe => id_recipe.id === `${id}` )
-        return res.render("./admin/edit", { items: info_recipe })
+        return res.render("./admin/edit", { recipe: info_recipe })
     },
     put(req, res){
         return res.send("Adm - Put")

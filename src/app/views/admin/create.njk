@@ -1,15 +1,22 @@
 {% extends "./layout.njk" %}
 
+{% block head %}
+    <title>Criar receita</title>
+{% endblock %}
+
 {% block content %}
 
-<form class="card" method="POST" action="/instructors">
-    <section class="avatar" style="background: url(https://source.unsplash.com/collection/3465564/500x500) no-repeat center center / cover"></section>
-    <section class="details">
-        <h3>Novo Instrutor</h3>
-
-        {% include 'instructors/fields.njk' %}
-        
+    <div class="page-menu">
+        <h1>Criando receita</h1>
+        <div class="form-wrapper">   
+            <form action="/admin/recipes?_method=PUT" method="POST" style="grid-column:2;">
+                <input type="hidden" name="id" value="{{ recipe.id }}">
+                <button class="save-button" type="submit">Salvar receita</button>
+        </div>     
+    </div>
+    <section class="edit-details">
+        {% include 'admin/fields.njk' %}
     </section>
-</div>
+    </form>
 
-{% endblock content %}
+{% endblock %}
