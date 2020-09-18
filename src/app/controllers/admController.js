@@ -68,13 +68,6 @@ module.exports = {
         return res.render("./admin/show", { items: info_recipe })
     },
     edit(req, res){
-        // Instructor.find(req.params.id, function(instructor) {
-        //     if (!instructor) return res.send("Instructor not found!")
-
-        //     instructor.birth = date(instructor.birth).iso
-
-        //     return res.render("instructors/edit", { instructor })
-        // })
         const id = req.params.id
         const info_recipe = data.find( id_recipe => id_recipe.id === `${id}` )
         return res.render("./admin/edit", { recipe: info_recipe })
