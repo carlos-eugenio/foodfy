@@ -1,4 +1,4 @@
-//const admModel = require('../models/admModel')
+const Adm = require('../models/Adm')
 const data = require("../../config/data")
 
 module.exports = {
@@ -40,27 +40,25 @@ module.exports = {
         return res.render("./admin/create")
     },
     post(req, res){
-        return res.send("Adm - post")
-        // const keys = Object.keys(req.body)
+        const keys = Object.keys(req.body)
 
-        // for(key of keys) {
-        //     if(req.body[key] == ""){
-        //         return res.send('Please, fill in all fields!')
-        //     }    
-        // }
+        for(key of keys) {
+            if(req.body[key] == ""){
+                return res.send('Please, fill in all fields!')
+            }    
+        }
 
-        // const values = [
-        //     req.body.name,
-        //     req.body.avatar_url,
-        //     req.body.gender,
-        //     req.body.services,
-        //     date(req.body.birth).iso,
-        //     date(Date.now()).iso
-        // ]
+        const values = [
+            req.body.recipe_title,
+            req.body.recipe_image,
+            req.body.recipe_ingredients.join(),
+            req.body.recipe_preparation.join(),
+            req.body.recipe_information
+        ]
 
-        // Instructor.create(values, function(instructor){
-        //     return res.redirect(`/instructors/${instructor.id}`)
-        // })    
+        Adm.create(values, function(recipe){
+            return res.redirect(`/admin/recipes/${recipe.id}`)
+        })    
     },
     show(req, res){
         const id = req.params.id

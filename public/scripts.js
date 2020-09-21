@@ -27,6 +27,10 @@ for (let recipe of recipe_description) {
 }
 
 // Adicionar ingredientes da receita - Area administrativa
+// CORRIGIR cloneNode, está clonando todos os campos
+document.querySelector(".add-preparation").addEventListener("click", addDirections);
+document.querySelector(".add-ingredient").addEventListener("click", addIngredient);  
+
 function addIngredient() {
     const ingredients = document.querySelector("#ingredients");
     const fieldContainer = document.querySelectorAll(".ingredient");
@@ -35,7 +39,7 @@ function addIngredient() {
     if (newField.children[0].value == "") return false;
   
     newField.children[0].value = "";
-    ingredients.appendChild(newField);
+    ingredients.appendChild(newField.children[0]);
   }
   
 // Adicionar modo de preparo da receita - Area administrativa
@@ -47,8 +51,7 @@ function addDirections() {
     if (newField.children[0].value == "") return false;
   
     newField.children[0].value = "";
-    directions.appendChild(newField);
-  }
-  
-document.querySelector(".add-ingredient").addEventListener("click", addIngredient);  
-document.querySelector(".add-preparation").addEventListener("click", addDirections);
+    directions.appendChild(newField.children[0]);
+}
+
+
