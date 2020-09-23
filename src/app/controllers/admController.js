@@ -3,38 +3,11 @@ const data = require("../../config/data")
 
 module.exports = {
     index(req, res){
-        return res.render("./admin/home", { items: data })
-        // let { filter, page, limit } = req.query
+        Adm.all(function(recipes) {
+            if (!recipes) return res.send("Database error!")
 
-        // page = page || 1
-        // limit = limit || 2
-        // let offset = limit * (page - 1)
-
-        // const params = {
-        //     filter,
-        //     page,
-        //     limit,
-        //     offset,
-        //     // Função de callback junto do params
-        //     // Como tinham mostrado no curso
-        //     // callback(instructors){
-        //     //     const pagination = {
-        //     //         total: Math.ceil(instructors[0].total / limit),
-        //     //         page
-        //     //     }
-        //     //     return res.render("instructors/index", { instructors, pagination, filter })
-        //     // }
-        // }
-
-        // // Minha implementação - Igual as outras para manter padronização
-        // Instructor.paginate(params, function(instructors) {
-        //     const pagination = {
-        //         total: Math.ceil(instructors[0].total / limit),
-        //         page
-        //     }
-        //     return res.render("instructors/index", { instructors, pagination, filter })
-        // })
-    
+            return res.render("./admin/home", { items: recipes })
+        })
     },
     create(req, res){
         return res.render("./admin/create")
@@ -48,11 +21,15 @@ module.exports = {
             }    
         }
 
+        //id_title
+
         const values = [
+            id_title,
             req.body.recipe_title,
             req.body.recipe_image,
-            req.body.recipe_ingredients.join(),
-            req.body.recipe_preparation.join(),
+            req.body.recipe_author,
+            req.body.recipe_ingredients,
+            req.body.recipe_preparation,
             req.body.recipe_information
         ]
 
@@ -71,32 +48,33 @@ module.exports = {
         return res.render("./admin/edit", { recipe: info_recipe })
     },
     put(req, res){
-        return res.send("Adm - Put")
-        // const keys = Object.keys(req.body)
+        const keys = Object.keys(req.body)
 
-        // for(key of keys) {
-        //     if(req.body[key] == ""){
-        //         return res.send('Please, fill in all fields!')
-        //     }    
-        // }
+        for(key of keys) {
+            if(req.body[key] == ""){
+                return res.send('Please, fill in all fields!')
+            }    
+        }
 
-        // const values = [            
-        //     req.body.avatar_url,
-        //     req.body.name,
-        //     date(req.body.birth).iso,
-        //     req.body.gender,
-        //     req.body.services,            
-        //     req.body.id
-        // ]
+        //id_title
 
-        // Instructor.update(values, function() {
-        //     return res.redirect(`/instructors/${req.body.id}`)
-        // })
+        const values = [
+            id_title,
+            req.body.recipe_title,
+            req.body.recipe_image,
+            req.body.recipe_author,
+            req.body.recipe_ingredients,
+            req.body.recipe_preparation,
+            req.body.recipe_information
+        ]
+
+        Adm.update(values, function(recipe){
+            return res.redirect(`/admin/recipes/${recipe.id}`)
+        }) 
     },
     delete(req, res){
-        return res.send("Adm - Delete")
-        // Instructor.delete(req.body.id, function(){
-        //     return res.redirect(`/instructors`)
-        // })
+        Adm.delete(req.body.id, function(){
+            return res.redirect(`/admin/recipes`)
+        })
     }
 }
