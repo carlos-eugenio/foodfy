@@ -1,11 +1,9 @@
 const Adm = require('../models/Adm')
-const data = require("../../config/data")
 
 module.exports = {
     index(req, res){
         Adm.all(function(recipes) {
             if (!recipes) return res.send("Database error!")
-
             return res.render("./admin/home", { items: recipes })
         })
     },
@@ -21,7 +19,9 @@ module.exports = {
             }    
         }
 
-        //id_title
+        const id_title = req.body.recipe_title.replace(/[^\w\-]+/g, '-').toLowerCase()
+
+        console.log(id_title)
 
         const values = [
             id_title,
@@ -38,14 +38,30 @@ module.exports = {
         })    
     },
     show(req, res){
-        const id = req.params.id
-        const info_recipe = data.find( id_recipe => id_recipe.id === `${id}` )
-        return res.render("./admin/show", { items: info_recipe })
+        Adm.find(req.params.id, function(recipe) {
+            if (!recipe) return res.send("Recipe not found!")
+
+            items = {
+                ...recipe,
+                ingredients: recipe.ingredients.replace(/{"|"}/gi, "").split('","'),
+                preparation: recipe.preparation.replace(/{"|"}/gi, "").split('","')
+            }
+
+            return res.render("./admin/show", { items })
+        })    
     },
     edit(req, res){
-        const id = req.params.id
-        const info_recipe = data.find( id_recipe => id_recipe.id === `${id}` )
-        return res.render("./admin/edit", { recipe: info_recipe })
+        Adm.find(req.params.id, function(recipe) {
+            if (!recipe) return res.send("Recipe not found!")
+
+            items = {
+                ...recipe,
+                ingredients: recipe.ingredients.replace(/{"|"}/gi, "").split('","'),
+                preparation: recipe.preparation.replace(/{"|"}/gi, "").split('","')
+            }
+
+            return res.render("./admin/edit", { items })
+        })
     },
     put(req, res){
         const keys = Object.keys(req.body)
@@ -56,7 +72,7 @@ module.exports = {
             }    
         }
 
-        //id_title
+        const id_title = req.body.recipe_title.replace(/[^\w\-]+/g, '-').toLowerCase()
 
         const values = [
             id_title,
@@ -65,11 +81,12 @@ module.exports = {
             req.body.recipe_author,
             req.body.recipe_ingredients,
             req.body.recipe_preparation,
-            req.body.recipe_information
+            req.body.recipe_information,
+            req.body.id
         ]
 
         Adm.update(values, function(recipe){
-            return res.redirect(`/admin/recipes/${recipe.id}`)
+            return res.redirect(`/admin/recipes/${req.body.id}`)
         }) 
     },
     delete(req, res){

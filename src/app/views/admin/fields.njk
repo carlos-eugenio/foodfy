@@ -1,20 +1,27 @@
 <div class="item">
     <div>Titulo da receita</div>
-    <div><input type="text" name="recipe_title" value="{{ recipe.title }}"></div>
+    <div><input type="text" name="recipe_title" value="{{ items.title }}"></div>
 </div>
 <div class="item">
     <div>Imagem da receita</div>
-    <div><input type="url" name="recipe_image" placeholder="http://" value="{{ recipe.image }}"></div>
+    <div><input type="url" name="recipe_image" placeholder="http://" value="{{ items.image }}"></div>
+</div>
+<div class="item">
+    <div>Autor</div>
+    <div><input type="text" name="recipe_author" value="{{ items.author }}"></div>
 </div>
 <div class="item">
     <div>Ingredientes</div>
     <div id="ingredients">
         <div class="ingredient">
-            {% if (recipe.ingredients) %}
-                {% for ingredients in recipe.ingredients %}
+            {% if (items.ingredients) %}
+                {% for ingredients in items.ingredients %}
                     <input type="text" name="recipe_ingredients[]" value="{{ ingredients }}" />
                 {% endfor %}
             {% else %}
+                <input type="text" name="recipe_ingredients[]" value="{{ ingredients }}" />
+                <input type="text" name="recipe_ingredients[]" value="{{ ingredients }}" />
+                <input type="text" name="recipe_ingredients[]" value="{{ ingredients }}" />
                 <input type="text" name="recipe_ingredients[]" value="{{ ingredients }}" />
             {% endif %} 
         </div>
@@ -25,11 +32,13 @@
     <div>Modo de preparo</div>
     <div id="directions">
         <div class="preparation">
-            {% if (recipe.preparation) %}
-                {% for preparation in recipe.preparation %}
+            {% if (items.preparation) %}
+                {% for preparation in items.preparation %}
                     <input type="text" name="recipe_preparation[]" value="{{ preparation }}" />
                 {% endfor %}
             {% else %}
+                <input type="text" name="recipe_preparation[]" value="{{ preparation }}" />
+                <input type="text" name="recipe_preparation[]" value="{{ preparation }}" />
                 <input type="text" name="recipe_preparation[]" value="{{ preparation }}" />
             {% endif %}    
         </div>
@@ -38,5 +47,5 @@
 </div>
 <div class="item">
     <div>Informações adicionais</div>
-    <div><textarea name="recipe_information">{{ recipe.information }}</textarea></div>
+    <div><textarea name="recipe_information">{{ items.information }}</textarea></div>
 </div>

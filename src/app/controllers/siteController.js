@@ -1,20 +1,33 @@
-//const siteModel = require('../models/siteModel')
-const data = require("../../config/data")
+const Site = require('../models/Site')
 
 
 module.exports = {
     home(req, res){
-        return res.render("./site/home", { items: data })
+        Site.all(function(recipes) {
+            if (!recipes) return res.send("Database error!")
+            return res.render("./site/home", { items: recipes })
+        })
     },
     about(req, res){
         return res.render("./site/about")
     },
     allRecipes(req, res){
-        return res.render("./site/recipes", { items: data })
+        Site.all(function(recipes) {
+            if (!recipes) return res.send("Database error!")
+            return res.render("./site/recipes", { items: recipes })
+        })
     },
     recipeDetails(req, res){
-        const id = req.params.id
-        const info_recipe = data.find( id_recipe => id_recipe.id === `${id}` )
-        return res.render("./site/recipe-details", { items: info_recipe })
+        Site.find(req.params.id, function(recipe) {
+            if (!recipe) return res.send("Recipe not found!")
+            
+            items = {
+                ...recipe,
+                ingredients: recipe.ingredients.replace(/{"|"}/gi, "").split('","'),
+                preparation: recipe.preparation.replace(/{"|"}/gi, "").split('","')
+            }
+
+            return res.render("./site/recipe-details", { items } )
+        })
     }
 }

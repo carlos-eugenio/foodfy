@@ -10,11 +10,11 @@
         <h1>Editar receita: {{items.title}}</h1>
         <div class="form-wrapper">
             <form action="/admin/recipes?_method=DELETE" method="POST">
-                <input type="hidden" name="id" value="{{ recipe.id }}">
+                <input type="hidden" name="id" value="{{ items.id }}">
                 <button class="delete-button" type="submit">Deletar</button>
             </form>    
             <form action="/admin/recipes?_method=PUT" method="POST">
-                <input type="hidden" name="id" value="{{ recipe.id }}">
+                <input type="hidden" name="id" value="{{ items.id }}">
                 <button class="save-button" type="submit">Salvar receita</button>
         </div>     
     </div>
