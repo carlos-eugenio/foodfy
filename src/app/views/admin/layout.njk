@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        {% block head %}{% endblock %}    
+
+        <link rel="stylesheet" href="/styles.css">
+    </head> 
+    <body>
+
+        <header class="header-adm">
+        <div class="pages-adm">
+            <a href="/" id="logo-img"><img src="/assets/logobw.png" alt="Foodfy-logo"></a>
+            <a href="/admin/recipes">Receitas</a>
+            <div class="avatar-adm">Área administrativa</div>
+        </div>
+
+        {% block header %}{% endblock %}
+
+        </header>
+
+        {% block content %}{% endblock %}
+
+    </body>
+    <script src="/scripts.js"></script>
+</html>
